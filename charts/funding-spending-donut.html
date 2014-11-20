@@ -7,7 +7,7 @@
 <div style="width:250px"><h2>Spending on mental health</h2>
 <p>Colorado spending for mental health services to the needy comes from a combination of state and federal funds including Medicaid. Most of the spending is on 17 community clinics throughout the state and two psychiatric hospitals in Denver and Pueblo.</p>
 <h3>Where the money goes</h3>
-<p>Spending on Colorado mental health services goes primarily to community clinics and state psychiatric hospitals. Numbers are for fiscal year 2013.</p>
+<p>Spending on Colorado mental health services goes primarily to community clinics and state psychiatric hospitals. Numbers are for fiscal year 2013. <em>Source: National Association of State mental Health Program Directors</em></p>
 </div>
 <canvas id="spending" width="250" height="250" style="width: 250px; height: 250px;"></canvas>
 <h2>$516.9 million</h2>
@@ -16,18 +16,17 @@
 <script>
 var pieData = [{
     value: 78,
-    color: "#40af49",
-    label: "Community-based programs"
+    color: "#004646",
+    label: "Community programs"
 }, {
     value: 22,
-    color: "#ac558a",
-    label: "State psychiatric hospitals"
+    color: "#001746",
+    label: "State hospitals"
 }, {
     value: 1,
-    color: "#f05541",
-    label: "Prevention, research, training and administration"
+    color: "#170046",
+    label: "Other"
 }];
-
 var helpers = Chart.helpers;
 var spending = new Chart(document.getElementById("spending").getContext("2d")).Doughnut(pieData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>%",
@@ -35,7 +34,6 @@ var spending = new Chart(document.getElementById("spending").getContext("2d")).D
 });
 var legendHolder = document.createElement('div');
 legendHolder.innerHTML = spending.generateLegend();
-
 // Include a html legend template after the module doughnut itself
 helpers.each(legendHolder.firstChild.childNodes, function (legendNode, index) {
     helpers.addEvent(legendNode, 'mouseover', function () {
@@ -48,7 +46,7 @@ helpers.each(legendHolder.firstChild.childNodes, function (legendNode, index) {
 helpers.addEvent(legendHolder.firstChild, 'mouseout', function () {
     spending.draw();
 });
-
 spending.chart.canvas.parentNode.parentNode.appendChild(legendHolder.firstChild);
     </script>
 </body>
+</html>
