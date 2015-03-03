@@ -1,0 +1,10 @@
+.tabs dd > a {display:block;background:#fff;color:#333;padding:.5em 1.5em .5em 1.5em;font-family: inherit;font-size:1.0em;font-style:italic;float:left;}
+		.tabs dd > a span.icon {color:#999;font-style:normal;padding-right:5%;float:left;}
+		.tabs dd.active a:hover span.icon {color:#fa5051;}
+		.tabs dd > a:hover {color:#316CFA;}
+		.tabs dd.active a {border-top:1px solid rgba(153,0,0,0.5);border-left:1px solid #ddd;border-right:1px solid #ddd;}
+		.tabs dd.active a:hover {color:#316CFA;}
+		.foo-source {font-family:inherit;font-size:.75em;font-style:italic;margin-top:-1.5em;padding-right:2.5em;float:right;}
+		.foo-footnotes {font-family:inherit;font-size:.75em;font-style:italic;}
+
+		#table-wrapper {height:500px;overflow-x:hidden;overflow-y:scroll;margin-bottom:1.5em;}
